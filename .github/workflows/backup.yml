@@ -14,10 +14,10 @@ name: Back up database
         FLY_DB_APP: ${{ secrets.FLY_DB_APP_NAME }}
         PGUSER: postgres
         PGPASSWORD: ${{ secrets.PGPASSWORD }}
-        PGDATABASE: app_production
+        PGDATABASE: yisi-db
         PGHOST: localhost
-        PGPORT: 5434
-        S3_BUCKET: app-db-backup
+        PGPORT: 5433
+        S3_BUCKET: yisi-linkding
 
       steps:
         - uses: s3-actions/s3cmd@v1.2.0
