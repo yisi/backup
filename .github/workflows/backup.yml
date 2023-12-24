@@ -14,7 +14,7 @@ jobs:
       FLY_DB_APP: ${{ secrets.FLY_DB_APP_NAME }}
       PGUSER: postgres
       PGPASSWORD: ${{ secrets.PGPASSWORD }}
-      PGDATABASE: yisi-db
+      PGDATABASE: linkding
       PGHOST: localhost
       PGPORT: 15432
       S3_BUCKET: yisi-linkding
