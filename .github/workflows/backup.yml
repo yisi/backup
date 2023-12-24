@@ -20,7 +20,7 @@ jobs:
       S3_BUCKET: yisi-cloud
 
     steps:
-      - uses: s3-actions/s3cmd@v1.2.0
+      - uses: s3-actions/s3cmd@v1.5.0
         with:
           provider: Cloudflare
           account_id: 863821d3c9c96a44e3831d0fabf5870b
