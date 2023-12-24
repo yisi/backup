@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: s3-actions/s3cmd@v1.2.0
         with:
-          provider: cloudflare
+          provider: Cloudflare
           region: us-east-1
           access_key: ${{ secrets.S3_ACCESS_KEY }}
           secret_key: ${{ secrets.S3_SECRET_KEY }}
