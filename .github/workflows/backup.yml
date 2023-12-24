@@ -15,8 +15,8 @@ jobs:
       PGUSER: postgres
       PGPASSWORD: ${{ secrets.PGPASSWORD }}
       PGDATABASE: yisi-db
-      PGHOST: localhost
-      PGPORT: 5434
+      PGHOST: db.lianzi.app
+      PGPORT: 5432
       S3_BUCKET: yisi-linkding
 
     steps:
