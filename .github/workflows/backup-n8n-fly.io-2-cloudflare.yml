@@ -1,11 +1,11 @@
-name: Back up linkding postgres to cloudflare
+name: Back up n8n postgres to cloudflare
 run-name: Task
 
 # every day 0 am 0 0 * * *
 #  every sunday           0 0 * * 0
 on:
   schedule:
-     - cron: "0 0 * * *"
+     - cron: "0 1 * * *"
   workflow_dispatch:
 jobs:
   backup:
@@ -15,7 +15,7 @@ jobs:
       FLY_DB_APP: ${{ secrets.FLY_DB_APP_NAME }}
       PGUSER: postgres
       PGPASSWORD: ${{ secrets.PGPASSWORD }}
-      PGDATABASE: linkding
+      PGDATABASE: n8n
       PGHOST: localhost
       PGPORT: 15432
       S3_BUCKET: yisi-cloud
@@ -46,4 +46,4 @@ jobs:
           PGPASSWORD=${PGPASSWORD} pg_dump -h $PGHOST -p $PGPORT -x -U $PGUSER -F c -b -v  -Z0 -f ${{ env.filename }} ${PGDATABASE}
           gzip ${{ env.filename }}
           ls
-          s3cmd put --acl-private ${{ env.filename }}.gz s3://$S3_BUCKET/Backup/Linkding/${{ env.filename }}.gz
+          s3cmd put --acl-private ${{ env.filename }}.gz s3://$S3_BUCKET/Backup/n8n/${{ env.filename }}.gz
