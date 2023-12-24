@@ -46,4 +46,4 @@ jobs:
           PGPASSWORD=${PGPASSWORD} pg_dump -h $PGHOST -p $PGPORT -x -U $PGUSER -F c -b -v  -Z0 -f ${{ env.filename }} ${PGDATABASE}
           gzip ${{ env.filename }}
           ls
-          s3cmd put --acl-private ${{ env.filename }}.gz s3://$S3_BUCKET/${{ env.filename }}.gz
+          s3cmd put --acl-private ${{ env.filename }}.gz s3://$S3_BUCKET/Backup/Linkding/${{ env.filename }}.gz
