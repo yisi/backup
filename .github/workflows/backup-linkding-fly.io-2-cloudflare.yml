@@ -1,4 +1,4 @@
-name: Back up database
+name: Back up linkding postgres to cloudflare
 run-name: Task
 
 # every day 0 am 0 0 * * *
